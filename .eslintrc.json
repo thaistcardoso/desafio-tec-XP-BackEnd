@@ -1,7 +1,7 @@
 {
-  "root": true,
-  "extends": ["trybe-backend"],
-  "rules": {
-    "sonarjs/no-duplicate-string": ["error", 5]
+    "root": true,
+    "extends": ["trybe-backend"],
+    "rules": {
+      "sonarjs/no-duplicate-string": ["error", 5]
+    }
   }
-}
