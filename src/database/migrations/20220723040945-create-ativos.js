@@ -10,7 +10,7 @@ module.exports = {
         type: Sequelize.INTEGER,
       },
       nomeAtivos: {
-        type: Sequelize.STRINGER,
+        type: Sequelize.STRING,
       },
       qtdeAtivos: {
         type: Sequelize.INTEGER,

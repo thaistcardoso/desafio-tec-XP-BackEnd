@@ -18,7 +18,7 @@ services:
     environment:
       MYSQL_USER: root
       MYSQL_PASSWORD: password
-      HOSTNAME: db
+      MYSQL_HOST: db
       JWT_SECRET: secretJWT
   db:
     container_name: db_desafio_xp

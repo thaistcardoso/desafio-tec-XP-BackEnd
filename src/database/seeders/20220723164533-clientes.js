@@ -11,7 +11,7 @@ module.exports = {
         saldo: 9000.5,
       },
       {
-      codCliente: 1,
+      codCliente: 2,
       nome: 'Jhon Frusciante',
       cpf: '014.569.879-54',
       email: 'FJhon@gmail.com',
