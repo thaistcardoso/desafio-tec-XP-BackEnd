@@ -21,9 +21,6 @@ module.exports = {
       password: {
         type: Sequelize.INTEGER,
       },
-      codAtivo: {
-        type: Sequelize.INTEGER,
-      },
       saldo: {
         type: Sequelize.DECIMAL,
       },

@@ -9,14 +9,13 @@ const ClientesSchema = (sequelize, DataTypes) => {
     cpf: DataTypes.STRING,
     email: DataTypes.STRING,
     password: DataTypes.INTEGER,
-    codAtivo: DataTypes.INTEGER,
     saldo: DataTypes.DECIMAL,
   }, { timeStamps: false, tableName: 'Clientes' });
   
-  ClienteTable.associate = (models) => {
-    ClienteTable.hasMany(models.Ativos, {
-      foreignKey: 'codAtivo',
-      as: 'Ativos',
+  ClienteTable.associate = models => {
+    ClienteTable.hasMany(models.ClienteAtivo, {
+      foreignKey: 'codClient',
+      as: 'clienteAtivos',
     });
   };
    

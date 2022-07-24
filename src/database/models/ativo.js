@@ -9,10 +9,10 @@ const AtivosSchema = (sequelize, DataTypes) => {
     valor: DataTypes.INTEGER,
   }, { timestamps: false, tableName: 'Ativos' });
     
-    AtivoTable.associate = (models) => {
-      AtivoTable.belongsTo(models.Clientes, {
+    AtivoTable.associate = models => {
+      AtivoTable.hasMany(models.ClienteAtivo, {
         foreignKey: 'codAtivo',
-        as: 'Cliente',
+        as: 'clienteAtivos',
       });
     };
   
