@@ -7,7 +7,7 @@ module.exports = {
         cpf: '003.125.884-47',
         email: 'EddieV@gmail.com',
         password: 12345678,
-        saldo: 9000.5,
+        saldo: 9000.50,
       },
       {
       codCliente: 2,
@@ -15,7 +15,7 @@ module.exports = {
       cpf: '014.569.879-54',
       email: 'FJhon@gmail.com',
       password: 12345678,
-      saldo: 5000.5,
+      saldo: 5000.50,
     },
     ], { timestamps: false });
 },

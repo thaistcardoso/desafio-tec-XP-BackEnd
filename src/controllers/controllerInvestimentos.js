@@ -6,6 +6,7 @@ const servicesInvestimentos = require('../services/servicesInvestimentos');
 
 router.post('/comprar', async (req, res) => {
   const updtCompra = await servicesInvestimentos.updateCliente(req.body);
+  console.log(req.body);
   res.status(201).json(updtCompra);
 });
 

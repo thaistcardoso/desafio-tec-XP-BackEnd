@@ -5,7 +5,7 @@ module.exports = {
         codAtivo: 1,
         nomeAtivos: 'PETR4', 
         qtdeAtivos: 1000,
-        valor: 30,
+        valor: 30.5,
       },
       {
         codAtivo: 2,

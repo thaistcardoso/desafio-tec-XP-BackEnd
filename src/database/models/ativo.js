@@ -5,6 +5,7 @@ const AtivosSchema = (sequelize, DataTypes) => {
      primaryKey: true,
      autoIncrement: true,
     },
+    nomeAtivos: DataTypes.STRING,
     qtdeAtivos: DataTypes.INTEGER,
     valor: DataTypes.INTEGER,
   }, { timestamps: false, tableName: 'Ativos' });

@@ -3,7 +3,7 @@
     codCliente: DataTypes.INTEGER,
     codAtivo: DataTypes.INTEGER,
     qtdeAtivos: DataTypes.INTEGER,
-  }, { timestamps: false, tableName: 'clientesAtivos' });
+  }, { timestamps: false, tableName: 'ClientesAtivos' });
     
     ClienteAtivosTable.associate = models => {
       models.Ativo.belongsToMany(models.Cliente, {
