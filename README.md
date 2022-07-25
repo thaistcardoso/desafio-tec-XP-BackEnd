@@ -12,6 +12,10 @@ Essa lista de ações constitui-se de requisições de investimentos em uma base
 
 - [x] Login
 
+- [x] middleware de erro
+
+- [x] autenticação e gerar token 
+
 - [ ] cadastro de Ações/Compra
 
 - [ ] cadastro de Ações/Venda
@@ -24,7 +28,7 @@ Essa lista de ações constitui-se de requisições de investimentos em uma base
 
 - [ ] atuação de valor de saque
 
-- [ ] busca valor de saldo
+- [x] busca valor de saldo
 
 ## Implementações Tecnicas 
 

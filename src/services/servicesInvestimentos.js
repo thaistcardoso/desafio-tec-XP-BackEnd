@@ -8,11 +8,11 @@ async function searchByClientandcodAtivo(codCliente, codAtivo) {
         attributes: ['qtdeAtivos'],
         where: { codCliente, codAtivo },
     });
-    if (!searchQtdAtivos) {
-        const error = new Error('Cliente e Ativo relacionado não existem.');
-        error.status = 409;
-        throw error;
-    }
+    // if (!searchQtdAtivos) {
+    //     const error = new Error('Cliente e Ativo relacionado não existem.');
+    //     error.status = 409;
+    //     throw error;
+    // }
     return searchQtdAtivos;
 }
 
@@ -21,11 +21,11 @@ async function searchByCodAtivo(codAtivo) {
         attributes: ['qtdeAtivos', 'valor'],
         where: { codAtivo },
     });
-    if (!searchValorAndAtivo) {
-        const error = new Error('CodAtivo não encontrado.');
-        error.status = 409;
-        throw error;
-    }
+    // if (!searchValorAndAtivo) {
+    //     const error = new Error('CodAtivo não encontrado.');
+    //     error.status = 409;
+    //     throw error;
+    // }
     return searchValorAndAtivo;
 }
 
@@ -34,11 +34,11 @@ async function searchCodCliend(codCliente) {
         attributes: ['saldo'],
         where: { codCliente },
     });
-    if (!searchClientSaldo) {
-        const error = new Error('CodCliente não encontrado.');
-        error.status = 409;
-        throw error;
-    }
+    // if (!searchClientSaldo) {
+    //     const error = new Error('CodCliente não encontrado.');
+    //     error.status = 409;
+    //     throw error;
+    // }
     return searchClientSaldo;
 }
 
@@ -51,7 +51,7 @@ const updateCliente = async ({ codCliente, codAtivo, qtdeAtivos }) => {
             where: { codCliente },
         });
     } else {
-        const ativoBuy = qtdeAtivos + qtdAtivoBuy;
+        const ativoBuy = Number(qtdeAtivos) + Number(qtdAtivoBuy);
         await ClienteAtivo.update({ qtdeAtivos: ativoBuy }, {
             where: { codCliente },
         });
@@ -60,7 +60,7 @@ const updateCliente = async ({ codCliente, codAtivo, qtdeAtivos }) => {
     const qtdAtivoSell = await searchByCodAtivo(codAtivo);
 
     if (qtdAtivoSell.qtdeAtivos > qtdeAtivos) {
-        const updtQtdAtivos = qtdAtivoSell.qtdeAtivos - qtdeAtivos;
+        const updtQtdAtivos = Number(qtdAtivoSell.qtdeAtivos) - Number(qtdeAtivos);
         await Ativo.update({ qtdeAtivos: updtQtdAtivos }, {
             where: { codAtivo },
         });
@@ -73,7 +73,7 @@ const updateCliente = async ({ codCliente, codAtivo, qtdeAtivos }) => {
     const saldo = await searchCodCliend(codCliente);
     
     if (saldo > 0 && saldo > qtdAtivoSell.valor) {
-        const somaSaldo = saldo + qtdAtivoSell.valor;
+        const somaSaldo = Number(saldo) + Number(qtdAtivoSell.valor);
         await Cliente.update({ saldo: somaSaldo }, {
             where: { codCliente },
         });
@@ -88,7 +88,7 @@ const updateVenda = async ({ codCliente, codAtivo, qtdeAtivos }) => {
     const qtdAtivoSelling = await searchByClientandcodAtivo(codCliente, codAtivo);
 
     if (qtdAtivoSelling !== 0 && qtdAtivoSelling < qtdeAtivos) {
-        const ativosSellupdt = qtdeAtivos - qtdAtivoSelling;
+        const ativosSellupdt = Number(qtdeAtivos) - Number(qtdAtivoSelling);
         await ClienteAtivo.update({ qtdeAtivos: ativosSellupdt }, {
             where: { codCliente },
         });
