@@ -24,18 +24,18 @@ Essa lista de ações constitui-se de requisições de investimentos em uma base
 
 - [x] busca por Ações
 
-- [ ] atuação de valor depositado
+- [ ] atualização de valor depositado
 
-- [ ] atuação de valor de saque
+- [ ] atualização de valor de saque
 
 - [x] busca valor de saldo
 
-## Implementações Tecnicas 
+## Implementações Técnicas 
 
-- instação das dependencias e configação de scripts do package.json.
+- instalação das dependências e configuração de scripts do package.json.
 - configuração de arquivos de ambiente: .env, Dockerfiler, docker-composer.
 - estruturação da base de dados e da entidade de relaciomento.
-- criação das migation e seeders.
+- criação das migration e seeders.
 - estrutura das Tabelas:
 
     **Cliente:**  codCliente*, nome, cpf, email, password, saldo.
@@ -54,7 +54,7 @@ Essa lista de ações constitui-se de requisições de investimentos em uma base
 
 ## Stack utilizada
 
-**Back-end:** Node, Express js, ExpressJS Async Errors Sequelize ORM, Sequelize-CLI, MySql2, Nodemoon, Dotenv, EsLint.
+**Back-end:** Node, ExpressJS, ExpressJS Async Errors, Sequelize ORM, Sequelize-CLI, MySql2, Nodemoon, Dotenv, EsLint.
 
 
 ## Instalação
